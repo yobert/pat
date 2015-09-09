@@ -28,7 +28,7 @@ type Router struct {
 
 // Add registers a pattern with a handler for the given request method.
 func (r *Router) Add(meth, pat string, h http.Handler) *mux.Route {
-	return r.NewRoute().PathPrefix(pat).Handler(h).Methods(meth)
+	return r.NewRoute().Path(pat).Handler(h).Methods(meth)
 }
 
 // Delete registers a pattern with a handler for DELETE requests.
